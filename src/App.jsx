@@ -1,9 +1,10 @@
 import Header from "../components/Header"
 import Addtodo from "../components/addtodo";
 import TodoItems from "../components/TodoItems";
+import React, { useEffect, useState } from "react";
 
 function App(){
-   let todoItems = [{
+   let initialtodoItems = [{
     name : 'Buy Milk',
     dueDate : '4/10/2023'
    },
@@ -13,10 +14,14 @@ function App(){
   },
   {name : "Don't go to College",
   dueDate : '6/10/2023'}]
+  const [todoItems, setTodoItems] = useState(initialtodoItems);
+  const handleNewItem = (newItem , dueDate) => {
+         console.log(newItem,dueDate)
+  }
   return (
     <center className="container">
       <Header></Header>
-      <Addtodo></Addtodo>
+      <Addtodo onNewItem = {handleNewItem}></Addtodo>
       <TodoItems todoItems = {todoItems}></TodoItems>
     </center>
   )
