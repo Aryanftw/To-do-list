@@ -1,9 +1,9 @@
 import List from "./List"
 
-let TodoItems = ({todoItems}) => {
+let TodoItems = ({todoItems , onDeleteItem}) => {
   return(
     <>
-    {todoItems.map((item) => (<List todoName = {item.name} todoDate = {item.dueDate}></List>))}
+    {todoItems.map((item) => (<List todoName = {item.name} todoDate = {item.dueDate} ondeleteItem = {onDeleteItem}></List>))}
     </>
   )
 }

@@ -1,4 +1,4 @@
-function List({todoName,todoDate}){
+function List({todoName,todoDate , ondeleteItem}){
   return(
 
     <div class="container text-center">
@@ -11,7 +11,7 @@ function List({todoName,todoDate}){
       
       
       <div class="col-2">
-      <button type="button" class="btn btn-danger">Delete</button>
+      <button type="button" class="btn btn-danger" onClick={() => ondeleteItem(todoName)}>Delete</button>
       </div>
     </div>
   </div> 
